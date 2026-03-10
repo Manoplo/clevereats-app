@@ -1,39 +1,47 @@
-import { CustomText } from "@/components/custom-text";
+import { CustomText } from "@/components/custom-text/custom-text";
 import { colors } from "@/constants/colors";
-import AntDesign from '@expo/vector-icons/AntDesign';
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { Image } from "expo-image";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-
-export default function Index() {
+export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={styles.image} />
+        <Image
+          source="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          style={styles.image}
+        />
       </View>
       <CustomText weight="bold" style={styles.title}>
         Clever
-        <CustomText weight="bold" style={styles.titlePart2}>Eats</CustomText>
+        <CustomText weight="bold" style={styles.titlePart2}>
+          Eats
+        </CustomText>
       </CustomText>
-      <View style={styles.descriptionContainer}>  
+      <View style={styles.descriptionContainer}>
         <CustomText style={styles.description}>Come más inteligente</CustomText>
       </View>
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.googleButton} onPress={() => {
-          console.log("Iniciar sesión con Google");
-        }}>
+        <TouchableOpacity
+          style={styles.googleButton}
+          onPress={() => {
+            console.log("Iniciar sesión con Google");
+          }}
+        >
           <AntDesign name="google" size={24} color="white" />
           <CustomText style={styles.googleButtonText}>Iniciar sesión con Google</CustomText>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.appleButton} onPress={() => {
-          console.log("Iniciar sesión con Apple");
-        }}>
+        <TouchableOpacity
+          style={styles.appleButton}
+          onPress={() => {
+            console.log("Iniciar sesión con Apple");
+          }}
+        >
           <AntDesign name="apple" size={24} color="white" />
           <CustomText style={styles.appleButtonText}>Iniciar sesión con Apple</CustomText>
         </TouchableOpacity>
       </View>
-      
-      
     </View>
   );
 }
@@ -43,7 +51,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     padding: 20,
-    
   },
   imageContainer: {
     width: "100%",
